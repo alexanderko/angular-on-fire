@@ -61,7 +61,9 @@ export class UserService {
   }
 
   static emailToId(email: string): string {
-    return email.replace('.', 'DOT').replace('@', 'AT');
+    return email
+      .replace(/\./g, 'DOT')
+      .replace('@', 'AT');
   }
 
   static toUserFromUserSnapshot(userSnapshot): User {
